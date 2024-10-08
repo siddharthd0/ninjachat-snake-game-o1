@@ -1,0 +1,202 @@
+/* public/styles.css */
+
+/* Reset default browser styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background-color: #121212;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .game-container {
+    text-align: center;
+    background: #1e1e1e;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.7);
+    position: relative;
+  }
+  
+  h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #4CAF50;
+  }
+  
+  .difficulty-selection {
+    margin-bottom: 20px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .difficulty-selection label {
+    margin-right: 0;
+  }
+  
+  .custom-select-wrapper {
+    position: relative;
+    width: 150px;
+  }
+  
+  #difficulty {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: #333;
+    color: #fff;
+    padding: 8px 40px 8px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .custom-arrow {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid #fff;
+    transform: translateY(-50%);
+  }
+  
+  #gameCanvas {
+    background-color: #000;
+    border: 4px solid #4CAF50;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+  }
+  
+  .score-board {
+    margin-top: 20px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+  }
+  
+  .score-board span {
+    display: inline-block;
+  }
+  
+  .controls {
+    margin-top: 25px;
+  }
+  
+  .controls p {
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+  
+  #startButton, #closeWelcome, #restartButton {
+    padding: 10px 25px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  #startButton:hover, #closeWelcome:hover, #restartButton:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+  }
+  
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 10; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: hidden; /* Disable scroll */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+  }
+  
+  .modal-content {
+    background-color: #1e1e1e;
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 30px;
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px; /* Could be more or less, depending on screen size */
+    text-align: center;
+    animation: fadeIn 0.5s;
+  }
+  
+  .modal-content h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 24px;
+    color: #FF4136;
+    margin-bottom: 20px;
+  }
+  
+  .modal-content p {
+    font-size: 18px;
+    margin-bottom: 25px;
+    line-height: 1.5;
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  
+  /* Custom scrollbar for modal content (optional) */
+  .modal-content::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .modal-content::-webkit-scrollbar-track {
+    background: #333;
+  }
+  
+  .modal-content::-webkit-scrollbar-thumb {
+    background-color: #4CAF50;
+    border-radius: 10px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .game-container {
+      width: 90%;
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 20px;
+    }
+  
+    #difficulty {
+      width: 100%;
+    }
+  
+    .modal-content {
+      width: 90%;
+      margin: 20% auto;
+    }
+  }

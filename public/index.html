@@ -1,0 +1,72 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Snake Game</title>
+  
+  <!-- Link to CSS -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Google Fonts for better UI -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Welcome Modal -->
+  <div id="welcomeModal" class="modal">
+    <div class="modal-content">
+      <h2>Welcome to Snake Game!</h2>
+      <p>Use the arrow keys to control the snake and eat as many apples as you can. Avoid hitting the walls or yourself!</p>
+      <button id="closeWelcome">Start Game</button>
+    </div>
+  </div>
+
+  <!-- Game Over Modal -->
+  <div id="gameOverModal" class="modal">
+    <div class="modal-content">
+      <h2>Game Over!</h2>
+      <p>Your Score: <span id="finalScore">0</span></p>
+      <button id="restartButton">Play Again</button>
+    </div>
+  </div>
+
+  <div class="game-container">
+    <h1>Snake Game</h1>
+    
+    <!-- Difficulty Selection -->
+    <div class="difficulty-selection">
+      <label for="difficulty">Select Difficulty:</label>
+      <div class="custom-select-wrapper">
+        <select id="difficulty">
+          <option value="easy">Easy</option>
+          <option value="medium" selected>Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+        <div class="custom-arrow"></div>
+      </div>
+    </div>
+    
+    <canvas id="gameCanvas" width="600" height="600"></canvas>
+    
+    <div class="score-board">
+      <span>Score: <span id="score">0</span></span>
+      <span>High Score: <span id="highScore">0</span></span>
+    </div>
+    
+    <div class="controls">
+      <p>Use arrow keys to control the snake.</p>
+      <button id="startButton">Start Game</button>
+    </div>
+  </div>
+  
+  <!-- Audio Elements -->
+  <audio id="eatSound" src="assets/eat.wav"></audio>
+  <audio id="gameOverSound" src="assets/gameover.wav"></audio>
+  
+  <!-- Link to JS -->
+  <script src="script.js"></script>
+</body>
+</html>
